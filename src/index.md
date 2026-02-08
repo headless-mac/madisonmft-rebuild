@@ -20,6 +20,13 @@ description: Therapy for individuals, couples, and families.
         <a class="btn btn--primary" href="{{ '/contact/' | url }}">Contact</a>
         <a class="btn btn--ghost" href="{{ '/about/' | url }}">Learn more</a>
       </div>
+
+      <div class="hero__chips" aria-label="Common topics">
+        <a class="chip" href="{{ '/services/individual/' | url }}">Anxiety + transitions</a>
+        <a class="chip" href="{{ '/services/couples/' | url }}">Couples + repair</a>
+        <a class="chip" href="{{ '/services/family/' | url }}">Family dynamics</a>
+        <a class="chip" href="{{ '/workshops/relational-wisdom-intensive/' | url }}">Relational Wisdom Workshop</a>
+      </div>
     </div>
 
     <div class="hero__frame reveal" aria-hidden="true">

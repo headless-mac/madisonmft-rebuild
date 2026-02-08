@@ -42,6 +42,39 @@ const $ = (sel, root = document) => root.querySelector(sel);
   });
 })();
 
+// Hero "light" follow (subtle). Respects reduced motion.
+(function heroLight() {
+  const reduced = window.matchMedia?.('(prefers-reduced-motion: reduce)')?.matches;
+  if (reduced) return;
+
+  const hero = document.querySelector('.hero');
+  if (!hero) return;
+
+  let raf = null;
+  let last = null;
+
+  const update = () => {
+    raf = null;
+    if (!last) return;
+    const { x, y } = last;
+    hero.style.setProperty('--hx', `${x}%`);
+    hero.style.setProperty('--hy', `${y}%`);
+  };
+
+  const onMove = (e) => {
+    const r = hero.getBoundingClientRect();
+    const cx = (e.clientX - r.left) / r.width;
+    const cy = (e.clientY - r.top) / r.height;
+    last = {
+      x: Math.max(0, Math.min(100, cx * 100)),
+      y: Math.max(0, Math.min(100, cy * 100)),
+    };
+    if (!raf) raf = requestAnimationFrame(update);
+  };
+
+  hero.addEventListener('pointermove', onMove);
+})();
+
 // Reveal-on-scroll (respect reduced motion)
 (function revealOnScroll() {
   const reduced = window.matchMedia?.('(prefers-reduced-motion: reduce)')?.matches;
