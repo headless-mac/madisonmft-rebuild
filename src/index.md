@@ -17,11 +17,6 @@ noProse: true
       <h1 class="home-title">Melissa Kester, LMFT</h1>
       <p class="home-sub">Washington, DC • Telehealth</p>
 
-      <div class="home-contact">
-        <p>731 8th Street SE, Washington, DC 20003</p>
-        <p>646-205-7606 • <a href="mailto:info@madisonmft.com">info@madisonmft.com</a></p>
-      </div>
-
       <div class="home-copy">
         <p>
           Melissa Kester, LMFT provides therapy for individuals, couples, and adult family members. By looking into past and present relationships,
