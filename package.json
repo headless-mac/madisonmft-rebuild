@@ -1,0 +1,14 @@
+{
+  "name": "madisonmft-rebuild",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "eleventy --serve",
+    "build": "eleventy",
+    "lint": "node tools/lint-links.js"
+  },
+  "dependencies": {
+    "@11ty/eleventy": "^3.0.0",
+    "luxon": "^3.5.0"
+  }
+}
