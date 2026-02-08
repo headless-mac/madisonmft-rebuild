@@ -28,9 +28,9 @@ noProse: true
       </div>
 
       <div class="home-cta">
-        <a class="btn btn--primary" href="{{ '/contact/' | url }}" data-pulse>Contact</a>
-        <a class="btn" href="{{ '/services/' | url }}">Services</a>
-        <a class="btn" href="{{ '/blog/' | url }}">Blog</a>
+        <a class="home-link" href="{{ '/contact/' | url }}" data-pulse>Contact</a>
+        <a class="home-link" href="{{ '/services/' | url }}">Services</a>
+        <a class="home-link" href="{{ '/blog/' | url }}">Blog</a>
       </div>
     </div>
   </div>
