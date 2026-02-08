@@ -1,77 +1,42 @@
 ---
 layout: layouts/base.njk
 title: Melissa Kester, LMFT
-description: Therapy for individuals, couples, and families.
+description: Therapy for individuals, couples, and adult family members.
 showTitle: false
+noPanel: true
 noProse: true
 ---
 
-<section class="hero">
-<div class="hero__inner">
-
-<div class="hero__copy reveal">
-  <p class="kicker">Washington, DC • Telehealth</p>
-  <h1>Therapy for individuals, couples, and adult family members.</h1>
-  <p>
-    By looking into past and present relationships, we work to develop new patterns and capacities that support more fulfilling relationships.
-  </p>
-  <p>
-    We are a community of engaged and thoughtful, systemically trained practitioners. Melissa practices in-depth psychotherapy that incorporates systemic,
-    relational, contemplative, and psychodynamic therapy.
-  </p>
-  <div class="hero__cta">
-    <a class="btn btn--primary" href="{{ '/contact/' | url }}">Contact</a>
-    <a class="btn btn--ghost" href="{{ '/about/' | url }}">Learn more</a>
-  </div>
-  <div class="hero__chips" aria-label="Common topics">
-    <a class="chip" href="{{ '/services/individual/' | url }}">Anxiety + transitions</a>
-    <a class="chip" href="{{ '/services/couples/' | url }}">Couples + repair</a>
-    <a class="chip" href="{{ '/services/family/' | url }}">Family dynamics</a>
-    <a class="chip" href="{{ '/workshops/relational-wisdom-intensive/' | url }}">Relational Wisdom Workshop</a>
-  </div>
-</div>
-
-<div class="hero__frame reveal" aria-hidden="true">
-  <figure class="hero__photo">
-    <img src="{{ '/assets/images/melissa-kester.jpg' | url }}" alt="" loading="eager" decoding="async" />
-  </figure>
-</div>
-
-</div>
-</section>
-
-<section class="section">
-  <div class="section__header">
-    <h2 class="section__title">Services</h2>
-    <p class="section__lead">A few ways we can work together.</p>
-  </div>
-
-  <div class="cards">
-    <div class="card reveal">
-      <h2>Individual therapy</h2>
-      <p>Support for anxiety, depression, transitions, self-worth, and more.</p>
-      <p><a href="{{ '/services/individual/' | url }}">Learn more</a></p>
+<section class="home">
+  <div class="home-card reveal">
+    <div class="home-card__top">
+      <img class="home-logo" src="{{ '/assets/images/logo-hero.png' | url }}" alt="Melissa Kester, LMFT" loading="eager" decoding="async" />
     </div>
-    <div class="card reveal">
-      <h2>Couples therapy</h2>
-      <p>Build better conflict skills, repair, and emotional intimacy.</p>
-      <p><a href="{{ '/services/couples/' | url }}">Learn more</a></p>
-    </div>
-    <div class="card reveal">
-      <h2>Family therapy</h2>
-      <p>Strengthen communication and connection across family relationships.</p>
-      <p><a href="{{ '/services/family/' | url }}">Learn more</a></p>
+
+    <div class="home-card__body">
+      <h1 class="home-title">Melissa Kester, LMFT</h1>
+      <p class="home-sub">Washington, DC • Telehealth</p>
+
+      <div class="home-contact">
+        <p>731 8th Street SE, Washington, DC 20003</p>
+        <p>646-205-7606 • <a href="mailto:info@madisonmft.com">info@madisonmft.com</a></p>
+      </div>
+
+      <div class="home-copy">
+        <p>
+          Melissa Kester, LMFT provides therapy for individuals, couples, and adult family members. By looking into past and present relationships,
+          we work to develop new patterns and capacities with clients to allow more fulfilling relationships.
+        </p>
+        <p>
+          Melissa practices in-depth psychotherapy that incorporates systemic, relational, contemplative, and psychodynamic therapy.
+        </p>
+      </div>
+
+      <div class="home-cta">
+        <a class="btn btn--primary" href="{{ '/contact/' | url }}" data-pulse>Contact</a>
+        <a class="btn" href="{{ '/services/' | url }}">Services</a>
+        <a class="btn" href="{{ '/blog/' | url }}">Blog</a>
+      </div>
     </div>
   </div>
-
-  <div class="divider" role="presentation"></div>
-</section>
-
-<section class="section prose">
-  <h2 class="section__title">Next steps</h2>
-  <ul>
-    <li>Read answers to common questions: <a href="{{ '/faq/' | url }}">FAQ</a></li>
-    <li>Learn about Melissa: <a href="{{ '/melissa/' | url }}">Melissa</a></li>
-    <li>Browse writing and resources: <a href="{{ '/blog/' | url }}">Blog</a></li>
-  </ul>
 </section>

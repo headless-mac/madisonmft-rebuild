@@ -54,7 +54,7 @@
     </header>
 
     <main id="content" class="wrap">
-      <div class="page-panel">
+      {% if noPanel %}
         {% if u != '/' and title and (showTitle is not defined or showTitle != false) %}
           {% set sub = description or excerpt %}
           <header class="page-head reveal">
@@ -70,7 +70,25 @@
             {{ content | safe }}
           </div>
         {% endif %}
-      </div>
+      {% else %}
+        <div class="page-panel">
+          {% if u != '/' and title and (showTitle is not defined or showTitle != false) %}
+            {% set sub = description or excerpt %}
+            <header class="page-head reveal">
+              <h1 class="page-title">{{ title }}</h1>
+              {% if sub %}<p class="page-sub">{{ sub }}</p>{% endif %}
+            </header>
+          {% endif %}
+
+          {% if noProse %}
+            {{ content | safe }}
+          {% else %}
+            <div class="prose">
+              {{ content | safe }}
+            </div>
+          {% endif %}
+        </div>
+      {% endif %}
     </main>
 
     <footer class="site-footer">
