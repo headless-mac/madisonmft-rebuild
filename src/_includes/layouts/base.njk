@@ -6,8 +6,8 @@
     <title>{{ title }}{% if title and title != site.name %} | {{ site.name }}{% endif %}</title>
     <meta name="description" content="{{ description or site.description }}" />
 
-    <link rel="canonical" href="{{ site.url }}{{ page.url }}" />
-    <link rel="stylesheet" href="/assets/site.css" />
+    <link rel="canonical" href="{{ site.url }}{{ page.url | url }}" />
+    <link rel="stylesheet" href="{{ '/assets/site.css' | url }}" />
 
     <meta property="og:site_name" content="{{ site.name }}" />
     <meta property="og:title" content="{{ title }}" />
@@ -22,16 +22,16 @@
 
     <header class="site-header">
       <div class="wrap">
-        <a class="brand" href="/">
-          {% if site.logo %}<img class="brand-logo" src="{{ site.logo }}" alt="{{ site.name }}" width="48" height="48" loading="eager" decoding="async" />{% endif %}
+        <a class="brand" href="{{ '/' | url }}">
+          {% if site.logo %}<img class="brand-logo" src="{{ site.logo | url }}" alt="{{ site.name }}" width="48" height="48" loading="eager" decoding="async" />{% endif %}
           <span class="brand-text">{{ site.name }}</span>
         </a>
         <nav aria-label="Primary">
-          <a href="/about/">About</a>
-          <a href="/services/">Services</a>
-          <a href="/team/">Team</a>
-          <a href="/articles/">Articles</a>
-          <a class="cta" href="/contact/">Contact</a>
+          <a href="{{ '/about/' | url }}">About</a>
+          <a href="{{ '/services/' | url }}">Services</a>
+          <a href="{{ '/team/' | url }}">Team</a>
+          <a href="{{ '/articles/' | url }}">Articles</a>
+          <a class="cta" href="{{ '/contact/' | url }}">Contact</a>
         </nav>
       </div>
     </header>

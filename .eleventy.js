@@ -9,6 +9,8 @@ export default function (eleventyConfig) {
       includes: "_includes",
       output: "_site"
     },
+    // GitHub Pages project site base path
+    pathPrefix: "/madisonmft-rebuild/",
     markdownTemplateEngine: "njk",
     htmlTemplateEngine: "njk"
   };
