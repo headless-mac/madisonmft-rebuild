@@ -72,7 +72,7 @@ body::after{
 .page-panel{
   margin: 18px auto 0;
   border-radius: clamp(18px, 2.5vw, 28px);
-  background: rgba(255,255,255,0.14);
+  background: rgba(255,255,255,0.02);
   border: none;
   box-shadow: 0 28px 110px rgba(12,18,21,0.14);
   backdrop-filter: blur(22px);
@@ -141,20 +141,22 @@ a:focus-visible, button:focus-visible{
 }
 .brand-sub{font-size: .86rem; color: var(--muted)}
 
-.site-nav{display:flex; align-items:center; gap:18px}
+.site-nav{display:flex; align-items:center; gap:12px}
 .site-nav a{
   position:relative;
   color: var(--ink);
   text-decoration:none;
   font-weight: 700;
   opacity: .86;
-  padding: 6px 2px;
-  border-radius: 0;
-  transition: opacity 180ms var(--ease), transform 180ms var(--ease);
+  padding: 10px 14px;
+  border-radius: 999px;
+  background: rgba(255,255,255,0.02);
+  backdrop-filter: blur(22px);
+  -webkit-backdrop-filter: blur(22px);
+  transition: opacity 180ms var(--ease), transform 180ms var(--ease), background 220ms var(--ease);
 }
-.site-nav a:hover{transform: translateY(-0.5px)}
+.site-nav a:hover{opacity: 1; transform: translateY(-0.5px); background: rgba(255,255,255,0.05)}
 .site-nav a.nav-contact{font-weight:800}
-.site-nav a:hover{opacity: 1; background: transparent}
 
 @keyframes haloPulse{
   0%{opacity:.22; transform: translateY(0)}
@@ -211,8 +213,20 @@ a:focus-visible, button:focus-visible{
 .is-pulsing{animation: pulseGlow 520ms var(--ease) 1}
 
 /* Mobile nav toggle */
-.nav-toggle{display:none; align-items:center; gap:10px; border: 1px solid rgba(12,18,21,0.16); background: rgba(255,255,255,0.6); padding: 10px 12px; border-radius: 999px; cursor:pointer; transition: transform 180ms var(--ease), border-color 180ms var(--ease), background 180ms var(--ease)}
-.nav-toggle:hover{transform: translateY(-1px); border-color: rgba(12,18,21,0.25)}
+.nav-toggle{
+  display:none;
+  align-items:center;
+  gap:10px;
+  border: none;
+  background: rgba(255,255,255,0.02);
+  backdrop-filter: blur(22px);
+  -webkit-backdrop-filter: blur(22px);
+  padding: 10px 14px;
+  border-radius: 999px;
+  cursor:pointer;
+  transition: transform 180ms var(--ease), background 180ms var(--ease), opacity 180ms var(--ease);
+}
+.nav-toggle:hover{transform: translateY(-1px); background: rgba(255,255,255,0.06)}
 .nav-toggle__label{font-weight:650}
 .nav-toggle__lines{width:18px; height:12px; position:relative}
 .nav-toggle__lines::before,
@@ -222,7 +236,7 @@ a:focus-visible, button:focus-visible{
   left:0;
   right:0;
   height:2px;
-  background: rgba(12,18,21,0.82);
+  background: rgba(12,18,21,0.55);
   border-radius: 999px;
   transition: transform 220ms var(--ease), top 220ms var(--ease), opacity 220ms var(--ease);
 }
@@ -456,9 +470,10 @@ a:focus-visible, button:focus-visible{
 
     border-radius: 18px;
     border: none;
-    background: rgba(255,255,255,0.30);
+    background: rgba(255,255,255,0.10);
     box-shadow: 0 30px 90px rgba(12,18,21,0.16);
     backdrop-filter: blur(22px);
+    -webkit-backdrop-filter: blur(22px);
   }
 
   html.nav-open .site-nav a{justify-content:flex-start; padding: 12px 12px}
