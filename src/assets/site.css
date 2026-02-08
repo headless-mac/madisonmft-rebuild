@@ -129,10 +129,11 @@ a:focus-visible, button:focus-visible{
 .header-inner{display:flex; align-items:center; justify-content:space-between; gap:18px}
 .brand{display:flex; align-items:center; gap:12px; text-decoration:none}
 .brand-mark{
-  width: 180px;
-  height: 54px;
+  width: 200px;
+  height: 68px;
   object-fit: cover;
-  object-position: 50% 26%;
+  /* keep full mark visible */
+  object-position: 50% 50%;
   border-radius: 999px;
   background: rgba(255,255,255,0.02);
   backdrop-filter: blur(var(--glassBlur));
