@@ -56,8 +56,10 @@ body::before{
   background-image: url('images/bg/botanical-bg-2000.jpg');
   background-size: cover;
   background-position: 50% 35%;
-  filter: saturate(1.05) contrast(0.95);
-  opacity: 0.55;
+  /* more present + more blurred */
+  filter: blur(10px) saturate(1.15) contrast(1.02);
+  transform: scale(1.06);
+  opacity: 0.78;
   pointer-events: none;
   z-index: -2;
 }
@@ -127,9 +129,10 @@ a:focus-visible, button:focus-visible{
 }
 .header-inner{display:flex; align-items:center; justify-content:space-between; gap:18px}
 .brand{display:flex; align-items:center; gap:12px; text-decoration:none}
+.brand-stack{display:flex; flex-direction:column; gap:2px; align-items:flex-start}
 .brand-plant{
   width: 110px;
-  height: 54px;
+  height: 44px;
   object-fit: contain;
   border-radius: 14px;
   background: rgba(255,255,255,0.02);
@@ -142,6 +145,7 @@ a:focus-visible, button:focus-visible{
   font-weight: 400;
   letter-spacing: 0;
   color: var(--ink);
+  line-height: 1.05;
 }
 
 .site-nav{display:flex; align-items:center; gap:12px}
@@ -426,26 +430,28 @@ hr{
 .post-card__excerpt{margin:0 0 10px; color: rgba(12,18,21,0.78)}
 .post-card__meta{margin:0; color: var(--muted); font-size: .92rem}
 
-/* Services (like blog cards) */
-.services-grid{display:grid; gap: 16px; grid-template-columns: repeat(12, 1fr)}
-.service-card{
-  grid-column: span 6;
-  display:block;
-  padding: 16px;
-  border-radius: var(--radius);
+/* Services (simple, clean list with fine rules) */
+.services-list{display:flex; flex-direction:column; gap: 0; margin-top: 22px}
+.service-row{
+  display:grid;
+  grid-template-columns: 220px 1fr;
+  gap: 18px;
+  padding: 16px 0;
   text-decoration:none;
-  background: rgba(255,255,255,0.10);
-  border: none;
-  box-shadow: 0 28px 90px rgba(12,18,21,0.10);
-  backdrop-filter: blur(18px);
-  -webkit-backdrop-filter: blur(18px);
-  transition: transform 240ms var(--ease), box-shadow 240ms var(--ease);
 }
-.service-card:hover{transform: translateY(-2px); box-shadow: 0 34px 120px rgba(12,18,21,0.14)}
-.service-card h2{margin: 6px 0 8px; font-family: var(--serif); font-size: 1.25rem; letter-spacing: -0.01em}
-.service-card p{margin: 0; color: rgba(12,18,21,0.78)}
+.service-row__title{font-family: var(--serif); font-weight: 400; font-size: 1.35rem; letter-spacing: -0.01em}
+.service-row__desc{color: rgba(12,18,21,0.78)}
+.service-row:hover .service-row__title{text-decoration: underline; text-decoration-color: rgba(11,61,46,0.35); text-underline-offset: 4px}
+hr.rule{margin:0; background: rgba(12,18,21,0.10)}
+
+@media (max-width: 900px){
+  .service-row{grid-template-columns: 1fr; gap: 8px; padding: 14px 0}
+}
 
 .bio-photo{max-width: 320px; width:100%; height:auto; border-radius: 22px; border: 1px solid rgba(12,18,21,0.12); box-shadow: 0 16px 40px rgba(12,18,21,0.10); float:right; margin: 6px 0 14px 18px}
+
+/* Services page spacing */
+.services{margin-top: 10px}
 
 /* Responsive */
 @media (max-width: 900px){

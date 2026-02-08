@@ -7,30 +7,38 @@ noProse: true
 ---
 
 <section class="services">
-  <div class="services-grid">
-    <a class="service-card reveal" href="{{ '/services/individual/' | url }}">
-      <h2>Individual therapy</h2>
-      <p>Anxiety, depression, transitions, identity, self-worth, and stress.</p>
+  <div class="services-list">
+    <a class="service-row reveal" href="{{ '/services/individual/' | url }}">
+      <div class="service-row__title">Individual therapy</div>
+      <div class="service-row__desc">Anxiety, depression, transitions, identity, self-worth, and stress.</div>
     </a>
 
-    <a class="service-card reveal" href="{{ '/services/couples/' | url }}">
-      <h2>Couples therapy</h2>
-      <p>Repair after rupture, conflict patterns, communication, and intimacy.</p>
+    <hr class="rule" />
+
+    <a class="service-row reveal" href="{{ '/services/couples/' | url }}">
+      <div class="service-row__title">Couples therapy</div>
+      <div class="service-row__desc">Repair after rupture, conflict patterns, communication, and intimacy.</div>
     </a>
 
-    <a class="service-card reveal" href="{{ '/services/family/' | url }}">
-      <h2>Family therapy</h2>
-      <p>Relationship dynamics, boundaries, and healthier patterns over time.</p>
+    <hr class="rule" />
+
+    <a class="service-row reveal" href="{{ '/services/family/' | url }}">
+      <div class="service-row__title">Family therapy</div>
+      <div class="service-row__desc">Relationship dynamics, boundaries, and healthier patterns over time.</div>
     </a>
 
-    <a class="service-card reveal" href="{{ '/services/anger/' | url }}">
-      <h2>Anger management</h2>
-      <p>Understand triggers, slow escalation, and build regulation skills.</p>
+    <hr class="rule" />
+
+    <a class="service-row reveal" href="{{ '/services/anger/' | url }}">
+      <div class="service-row__title">Anger management</div>
+      <div class="service-row__desc">Understand triggers, slow escalation, and build regulation skills.</div>
     </a>
 
-    <a class="service-card reveal" href="{{ '/services/grief/' | url }}">
-      <h2>Grief management</h2>
-      <p>Support through loss, change, and the complexity of mourning.</p>
+    <hr class="rule" />
+
+    <a class="service-row reveal" href="{{ '/services/grief/' | url }}">
+      <div class="service-row__title">Grief management</div>
+      <div class="service-row__desc">Support through loss, change, and the complexity of mourning.</div>
     </a>
   </div>
 </section>
