@@ -2,6 +2,7 @@ export default function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy({ "src/assets": "assets" });
 
   eleventyConfig.addFilter("year", () => String(new Date().getFullYear()));
+  eleventyConfig.addFilter("startsWith", (str, prefix) => String(str || "").startsWith(prefix));
 
   return {
     dir: {

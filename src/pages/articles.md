@@ -2,20 +2,18 @@
 layout: layouts/base.njk
 title: Articles
 permalink: /articles/
+description: Redirected.
 ---
 
-<div class="prose">
-  <h1>Articles</h1>
-  <p>This section has moved to <a href="{{ '/blog/' | url }}">Blog</a>.</p>
+<p class="page-intro">This section has moved to <a href="{{ '/blog/' | url }}">Blog</a>.</p>
 
-  <ul>
-  {% for post in collections.posts | reverse %}
-    {% if not post.data.draft %}
-      <li>
-        <a href="{{ post.url | url }}">{{ post.data.title }}</a>
-        {% if post.data.date %}<span class="kicker"> — {{ post.data.date.toISOString().slice(0,10) }}</span>{% endif %}
-      </li>
-    {% endif %}
-  {% endfor %}
-  </ul>
-</div>
+<ul>
+{% for post in collections.posts | reverse %}
+  {% if not post.data.draft %}
+    <li>
+      <a href="{{ post.url | url }}">{{ post.data.title }}</a>
+      {% if post.data.date %}<span class="kicker"> — {{ post.data.date.toISOString().slice(0,10) }}</span>{% endif %}
+    </li>
+  {% endif %}
+{% endfor %}
+</ul>

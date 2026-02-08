@@ -5,9 +5,7 @@ permalink: /blog/
 description: Thoughts, resources, and reflections.
 ---
 
-<div class="prose">
-  <h1>Blog</h1>
-  <p>Thoughts, resources, and reflections.</p>
+<p class="page-intro">Thoughts, resources, and reflections.</p>
 
   <ul>
   {% for post in collections.posts | reverse %}
@@ -19,4 +17,3 @@ description: Thoughts, resources, and reflections.
     {% endif %}
   {% endfor %}
   </ul>
-</div>

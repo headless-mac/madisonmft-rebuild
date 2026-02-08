@@ -1,22 +1,21 @@
 ---
 layout: layouts/base.njk
-title: Our Team
+title: Practice
 permalink: /team/
+description: A note from Melissa.
 ---
 
-<div class="prose">
-# Note from Melissa
+## A note from Melissa
 
- I believe everyone should have access to quality mental health, sanctuary, and freedom. While my availability is limited at this time, after years of practice and training new therapists, I do have an extensive referral list. I welcome you to our website and the opportunity for the self care you have been seeking.
+I believe everyone should have access to quality mental health, sanctuary, and freedom.
 
-### Melissa Kester, LMFT, Founder & Director
+While my availability is limited at this time, after years of practice and training new therapists, I do have an extensive referral list. I welcome you to the website and the opportunity for the self care you have been seeking.
 
-Melissa Kester
- 
- 
- 
- Melissa Kester is a Licensed Marriage and Family Therapist and Founder of Madison Marriage and Family Therapy, who has clinical experience working with individuals, couples and families. She has served as the Metro Chapter President of the New York State Association of Marriage and Family Therapy. Melissa has been a member of the Hunter College adjunct team, instructing graduate students in family therapy.
+If you’re looking to learn more about Melissa, visit: **[Melissa]({{ '/melissa/' | url }})**.
 
-### Melissa Kester, LMFT | 731 8th Street SE Washington, DC 20003
-info@madisonmft.com | 646-205-7606
-</div>
+---
+
+**Melissa Kester, LMFT**  
+Founder & Director  
+731 8th Street SE, Washington, DC 20003  
+info@madisonmft.com • 646-205-7606

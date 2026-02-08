@@ -2,6 +2,8 @@
 layout: layouts/base.njk
 title: Melissa Kester, LMFT
 description: Therapy for individuals, couples, and families.
+showTitle: false
+noProse: true
 ---
 
 <section class="hero">

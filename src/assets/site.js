@@ -42,37 +42,24 @@ const $ = (sel, root = document) => root.querySelector(sel);
   });
 })();
 
-// Hero "light" follow (subtle). Respects reduced motion.
-(function heroLight() {
+// Click pulse (meaningful interaction feedback)
+(function clickPulse() {
   const reduced = window.matchMedia?.('(prefers-reduced-motion: reduce)')?.matches;
   if (reduced) return;
 
-  const hero = document.querySelector('.hero');
-  if (!hero) return;
+  const sel = 'a.btn, button.btn, .site-nav a, a.chip, [data-pulse]';
+  const els = Array.from(document.querySelectorAll(sel));
+  if (!els.length) return;
 
-  let raf = null;
-  let last = null;
-
-  const update = () => {
-    raf = null;
-    if (!last) return;
-    const { x, y } = last;
-    hero.style.setProperty('--hx', `${x}%`);
-    hero.style.setProperty('--hy', `${y}%`);
-  };
-
-  const onMove = (e) => {
-    const r = hero.getBoundingClientRect();
-    const cx = (e.clientX - r.left) / r.width;
-    const cy = (e.clientY - r.top) / r.height;
-    last = {
-      x: Math.max(0, Math.min(100, cx * 100)),
-      y: Math.max(0, Math.min(100, cy * 100)),
-    };
-    if (!raf) raf = requestAnimationFrame(update);
-  };
-
-  hero.addEventListener('pointermove', onMove);
+  for (const el of els) {
+    el.addEventListener('click', () => {
+      el.classList.remove('is-pulsing');
+      // Force reflow so the animation can restart on rapid clicks.
+      void el.offsetWidth;
+      el.classList.add('is-pulsing');
+      window.setTimeout(() => el.classList.remove('is-pulsing'), 520);
+    });
+  }
 })();
 
 // Reveal-on-scroll (respect reduced motion)
