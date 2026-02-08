@@ -13,7 +13,7 @@
     <meta property="og:title" content="{{ title }}" />
     <meta property="og:description" content="{{ description or site.description }}" />
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="{{ site.url }}{{ page.url }}" />
+    <meta property="og:url" content="{{ site.url }}{{ page.url | url }}" />
 
     <meta name="twitter:card" content="summary" />
   </head>

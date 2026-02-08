@@ -16,12 +16,12 @@ description: Therapy for individuals, couples, and families.
       relational, contemplative, and psychodynamic therapy.
     </p>
     <p class="home-hero__cta">
-      <a class="cta" href="/contact/">Contact</a>
-      <a class="secondary" href="/about/">Learn more</a>
+      <a class="cta" href="{{ '/contact/' | url }}">Contact</a>
+      <a class="secondary" href="{{ '/about/' | url }}">Learn more</a>
     </p>
   </div>
   <div class="home-hero__media" aria-hidden="true">
-    <img src="/assets/images/melissa-kester.jpg" alt="" loading="eager" decoding="async" />
+    <img src="{{ '/assets/images/melissa-kester.jpg' | url }}" alt="" loading="eager" decoding="async" />
   </div>
 </section>
 
@@ -29,25 +29,25 @@ description: Therapy for individuals, couples, and families.
   <div class="card">
     <h2>Individual therapy</h2>
     <p>Support for anxiety, depression, transitions, self-worth, and more.</p>
-    <p><a href="/services/individual/">Learn more</a></p>
+    <p><a href="{{ '/services/individual/' | url }}">Learn more</a></p>
   </div>
   <div class="card">
     <h2>Couples therapy</h2>
     <p>Build better conflict skills, repair, and emotional intimacy.</p>
-    <p><a href="/services/couples/">Learn more</a></p>
+    <p><a href="{{ '/services/couples/' | url }}">Learn more</a></p>
   </div>
   <div class="card">
     <h2>Family therapy</h2>
     <p>Strengthen communication and connection across family relationships.</p>
-    <p><a href="/services/family/">Learn more</a></p>
+    <p><a href="{{ '/services/family/' | url }}">Learn more</a></p>
   </div>
 </section>
 
 <section class="prose">
   <h2>Next steps</h2>
   <ul>
-    <li>Read answers to common questions: <a href="/faq/">FAQ</a></li>
-    <li>Meet the practitioners: <a href="/team/">Our team</a></li>
-    <li>Browse writing and resources: <a href="/articles/">Articles</a></li>
+    <li>Read answers to common questions: <a href="{{ '/faq/' | url }}">FAQ</a></li>
+    <li>Meet the practitioners: <a href="{{ '/team/' | url }}">Our team</a></li>
+    <li>Browse writing and resources: <a href="{{ '/articles/' | url }}">Articles</a></li>
   </ul>
 </section>

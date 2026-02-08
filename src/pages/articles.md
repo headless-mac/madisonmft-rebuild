@@ -11,7 +11,7 @@ permalink: /articles/
   <ul>
   {% for post in collections.posts | reverse %}
     <li>
-      <a href="{{ post.url }}">{{ post.data.title }}</a>
+      <a href="{{ post.url | url }}">{{ post.data.title }}</a>
       {% if post.data.date %}<span class="kicker"> — {{ post.data.date.toISOString().slice(0,10) }}</span>{% endif %}
     </li>
   {% endfor %}
