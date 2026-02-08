@@ -1,12 +1,13 @@
 ---
 layout: layouts/base.njk
-title: Articles
-permalink: /articles/
+title: Blog
+permalink: /blog/
+description: Thoughts, resources, and reflections.
 ---
 
 <div class="prose">
-  <h1>Articles</h1>
-  <p>This section has moved to <a href="{{ '/blog/' | url }}">Blog</a>.</p>
+  <h1>Blog</h1>
+  <p>Thoughts, resources, and reflections.</p>
 
   <ul>
   {% for post in collections.posts | reverse %}

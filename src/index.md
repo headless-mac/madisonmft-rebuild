@@ -48,6 +48,6 @@ description: Therapy for individuals, couples, and families.
   <ul>
     <li>Read answers to common questions: <a href="{{ '/faq/' | url }}">FAQ</a></li>
     <li>Meet the practitioners: <a href="{{ '/team/' | url }}">Our team</a></li>
-    <li>Browse writing and resources: <a href="{{ '/articles/' | url }}">Articles</a></li>
+    <li>Browse writing and resources: <a href="{{ '/blog/' | url }}">Blog</a></li>
   </ul>
 </section>

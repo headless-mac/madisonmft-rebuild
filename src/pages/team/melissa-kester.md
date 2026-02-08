@@ -15,7 +15,7 @@ permalink: /team/melissa-kester/
 
  Melissa sees therapy as an opportunity to stretch, and to listen to our minds and bodies. In your space you will be able to slow down and reconnect with yourself. It is a haven of your own design, where you can create or adjust boundaries for protection and healing.
 
- Melissa’s clinical approach is integrative, combining systemic, psychodynamic, creative and contemplative psychotherapy. She recognizes the unique qualities each individual possesses and believes in complimenting them with an appropriate clinical approach. Through open dialogue and active listening, Melissa nurtures an environment for constructive change.
+ Melissa’s clinical approach is integrative, combining systemic, psychodynamic, creative and contemplative psychotherapy. She recognizes the unique qualities each individual possesses and believes in complementing them with an appropriate clinical approach. Through open dialogue and active listening, Melissa nurtures an environment for constructive change.
 
 ### Melissa Kester, LMFT | 731 8th Street SE Washington, DC 20003
 info@madisonmft.com | 646-205-7606

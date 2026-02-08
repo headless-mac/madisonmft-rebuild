@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "eleventy --serve",
     "build": "eleventy",
-    "lint": "node tools/lint-links.js"
+    "new:post": "node tools/new-post.mjs"
   },
   "dependencies": {
     "@11ty/eleventy": "^3.0.0",

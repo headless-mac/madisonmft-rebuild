@@ -9,7 +9,7 @@ permalink: /team/
 
  I believe everyone should have access to quality mental health, sanctuary, and freedom. While my availability is limited at this time, after years of practice and training new therapists, I do have an extensive referral list. I welcome you to our website and the opportunity for the self care you have been seeking.
 
-### Melissa Kester, LMFT, Founder & Directo r
+### Melissa Kester, LMFT, Founder & Director
 
 Melissa Kester
  
