@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" class="no-js">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -16,22 +16,34 @@
     <meta property="og:url" content="{{ site.url }}{{ page.url | url }}" />
 
     <meta name="twitter:card" content="summary" />
+    <meta name="theme-color" content="#0c1215" />
+
+    <script>
+      document.documentElement.classList.remove('no-js');
+      document.documentElement.classList.add('js');
+    </script>
   </head>
   <body>
     <a class="skip" href="#content">Skip to content</a>
 
-    <header class="site-header">
-      <div class="wrap">
+    <header class="site-header" data-header>
+      <div class="wrap header-inner">
         <a class="brand" href="{{ '/' | url }}">
           {% if site.logo %}<img class="brand-logo" src="{{ site.logo | url }}" alt="{{ site.name }}" width="48" height="48" loading="eager" decoding="async" />{% endif %}
           <span class="brand-text">{{ site.name }}</span>
         </a>
-        <nav aria-label="Primary">
+
+        <button class="nav-toggle" type="button" aria-controls="site-nav" aria-expanded="false" data-nav-toggle>
+          <span class="nav-toggle__lines" aria-hidden="true"></span>
+          <span class="nav-toggle__label">Menu</span>
+        </button>
+
+        <nav class="site-nav" id="site-nav" aria-label="Primary" data-site-nav>
           <a href="{{ '/about/' | url }}">About</a>
           <a href="{{ '/services/' | url }}">Services</a>
           <a href="{{ '/team/' | url }}">Team</a>
           <a href="{{ '/blog/' | url }}">Blog</a>
-          <a class="cta" href="{{ '/contact/' | url }}">Contact</a>
+          <a class="btn btn--primary" href="{{ '/contact/' | url }}">Contact</a>
         </nav>
       </div>
     </header>
@@ -41,11 +53,15 @@
     </main>
 
     <footer class="site-footer">
-      <div class="wrap">
-        <p><strong>{{ site.name }}</strong></p>
-        <p>{{ site.footerLine }}</p>
+      <div class="wrap footer-inner">
+        <div>
+          <p class="footer-brand">{{ site.name }}</p>
+          <p class="fine">{{ site.footerLine }}</p>
+        </div>
         <p class="fine">© {{ "" | year }} {{ site.name }}.</p>
       </div>
     </footer>
+
+    <script type="module" src="{{ '/assets/site.js' | url }}" defer></script>
   </body>
 </html>
