@@ -96,7 +96,7 @@ a:focus-visible, button:focus-visible{
   position: sticky;
   top: 0;
   z-index: 50;
-  padding: 12px 0;
+  padding: calc(10px + env(safe-area-inset-top)) 0 10px;
   background: rgba(246,242,236,0.55);
   backdrop-filter: blur(10px);
   border-bottom: 1px solid rgba(12,18,21,0.08);
@@ -386,8 +386,12 @@ a:focus-visible, button:focus-visible{
 
 /* Responsive */
 @media (max-width: 900px){
-  .hero__inner{grid-template-columns: 1fr;}
-  .hero__frame{justify-content:flex-start}
+  .hero__inner{grid-template-columns: 1fr; gap: 16px; padding: 20px}
+
+  /* Put the photo first on phones so it’s immediately visible. */
+  .hero__frame{order: -1; justify-content:flex-start}
+  .hero__copy{order: 1}
+
   .hero__photo{width: min(520px, 100%)}
   /* On narrow screens: do NOT crop the headshot */
   .hero__photo img{aspect-ratio: 452 / 566; object-fit: contain; background: rgba(255,255,255,0.04)}
@@ -404,19 +408,28 @@ a:focus-visible, button:focus-visible{
   .nav-toggle{display:inline-flex}
   .site-nav{display:none}
 
+  /* Mobile menu: usable contrast, no huge empty top padding, safe-area aware */
   html.nav-open .site-nav{
     display:flex;
     position: fixed;
-    inset: 0;
-    padding: 88px 22px 22px;
+    left: 14px;
+    right: 14px;
+    top: calc(72px + env(safe-area-inset-top));
+    bottom: auto;
+
+    padding: 14px;
     flex-direction: column;
-    gap: 14px;
-    background:
-      radial-gradient(1000px 700px at 20% 0%, rgba(176,138,88,0.18), transparent 60%),
-      radial-gradient(800px 680px at 105% 10%, rgba(11,61,46,0.14), transparent 62%),
-      rgba(246,242,236,0.92);
-    backdrop-filter: blur(12px);
+    gap: 10px;
+
+    border-radius: 18px;
+    border: 1px solid rgba(12,18,21,0.14);
+    background: rgba(255,255,255,0.94);
+    box-shadow: 0 28px 80px rgba(12,18,21,0.20);
+    backdrop-filter: blur(14px);
   }
+
+  html.nav-open .site-nav a{justify-content:flex-start; padding: 12px 12px}
+  html.nav-open .site-nav a.btn{justify-content:center}
 
   html.nav-open .nav-toggle__lines::before{top:5px; transform: rotate(45deg)}
   html.nav-open .nav-toggle__lines::after{top:5px; transform: rotate(-45deg)}
