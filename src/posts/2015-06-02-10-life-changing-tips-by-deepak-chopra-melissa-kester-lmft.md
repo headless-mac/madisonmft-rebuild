@@ -3,10 +3,13 @@ layout: layouts/base.njk
 tags: [posts]
 title: "10 Life Changing Tips by Deepak Chopra \u2014 Melissa Kester, LMFT"
 date: 2015-06-02
+excerpt: "In the midst of movement and chaos, keep stillness inside of you. ~Deepak Chopra"
+featuredImage: "http://static1.squarespace.com/static/52ec12dce4b008cb96e75c44/t/556df705e4b0306d5893ce46/1433270027743/Deepak_Chopra-11-470x260.jpg?format=1500w"
+noProse: true
 ---
+![Deepak Chopra](/assets/images/madisonmft/Deepak_Chopra-11-470x260-fb0c4e4fe2.jpg)
 
-<div class="prose">
-He practices meditation with P Diddy, does yoga with Tara Stiles, and hangs out with Lady Gaga. Here are ten life changing tips inspired from quotes by Deepak Chopra! 
+He practices meditation with P Diddy, does yoga with Tara Stiles, and hangs out with Lady Gaga. Here are ten life changing tips inspired from quotes by [Deepak Chopra](https://www.deepakchopra.com)! 
 
  1. Let Go 
 
@@ -49,5 +52,5 @@ He practices meditation with P Diddy, does yoga with Tara Stiles, and hangs out 
  “Even when you think you have your life all mapped out, things happen that shape your destiny in ways you might never have imagined.”
 
 ### Melissa Kester, LMFT | 731 8th Street SE Washington, DC 20003
-info@madisonmft.com | 646-205-7606
-</div>
+[info@madisonmft.com](mailto:%20info@madisonmft.com) | 646-205-7606
+

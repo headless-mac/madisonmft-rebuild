@@ -3,17 +3,15 @@ layout: layouts/base.njk
 title: Blog
 permalink: /blog/
 description: Thoughts, resources, and reflections.
+noProse: true
 ---
 
-<p class="page-intro">Thoughts, resources, and reflections.</p>
-
-  <ul>
-  {% for post in collections.posts | reverse %}
-    {% if not post.data.draft %}
-      <li>
-        <a href="{{ post.url | url }}">{{ post.data.title }}</a>
-        {% if post.data.date %}<span class="kicker"> — {{ post.data.date.toISOString().slice(0,10) }}</span>{% endif %}
-      </li>
-    {% endif %}
-  {% endfor %}
-  </ul>
+<section class="blog">
+  <div class="blog-grid">
+    {% for post in collections.posts | reverse %}
+      {% if not post.data.draft %}
+        {% include "partials/post-card.njk" %}
+      {% endif %}
+    {% endfor %}
+  </div>
+</section>

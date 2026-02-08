@@ -3,9 +3,9 @@ layout: layouts/base.njk
 tags: [posts]
 title: "Tips for Online Dating \u2014 Melissa Kester, LMFT"
 date: 2015-06-15
+excerpt: "Frustrated with online dating. &nbsp;Learn some basic tips to guide you. &nbsp;"
+noProse: true
 ---
-
-<div class="prose">
 As much as we hate it, online dating is part of our norm now. During 2009, 22% of heterosexual couples met their significant others online. This means even more than that have used or are still using online dating.
 
  You probably have dabbled with it. Maybe you are part of that 22%--which may be higher now in 2015. You probably also have experience or know others who down right hate it. 
@@ -52,9 +52,9 @@ As much as we hate it, online dating is part of our norm now. During 2009, 22% o
 
  This may be part of the reason why Khalid Khan and Dr. Sameer Chaudhry found that people whose screen names started with the first half of the alphabet got better responses. This has such a strong effect, it was almost as successful as having an attractive photo. 
 
- Either way, we are on overload. There are so many options that people make dates and cancel others. They may go on one date, have a decent but not awesome time, and not go on another date again. Psychologists, Paul Eastwick and Lucy Hunt, found that few people built romantic relationships on first impressions. Instead they fall for each other unexpectedly over periods of time. 
+ Either way, we are on overload. There are so many options that people make dates and cancel others. They may go on one date, have a decent but not awesome time, and not go on another date again. Psychologists, [Paul Eastwick](http://pauleastwick.com/pauleastwick/) and Lucy Hunt, found that few people built romantic relationships on first impressions. Instead they fall for each other unexpectedly over periods of time. 
 
- As Aziz Ansari, put it in his latest NYT's article: 
+ As Aziz Ansari, put it in his latest [NYT's article:](http://www.nytimes.com/2015/06/14/opinion/sunday/how-to-make-online-dating-work.html)
 
  Think about it in terms of pop music. When a new song featuring Drake comes on the radio, you’re like, “What is this song? Oh another Drake song. Big deal. Heard this before. Next please!” Then you keep hearing it and you think, “Oh Drake, you’ve done it again!” 
 
@@ -79,5 +79,5 @@ As much as we hate it, online dating is part of our norm now. During 2009, 22% o
  Most of all have fun. You know quickly what repels and attracts you. Listen to your instincts.
 
 ### Melissa Kester, LMFT | 731 8th Street SE Washington, DC 20003
-info@madisonmft.com | 646-205-7606
-</div>
+[info@madisonmft.com](mailto:%20info@madisonmft.com) | 646-205-7606
+

@@ -1,0 +1,15 @@
+<article class="post-card reveal">
+  <a class="post-card__link" href="{{ post.url | url }}">
+    {% if post.data.featuredImage %}
+      <div class="post-card__media">
+        <img src="{{ post.data.featuredImage | url }}" alt="" loading="lazy" decoding="async" />
+      </div>
+    {% endif %}
+
+    <div class="post-card__body">
+      <h2 class="post-card__title">{{ post.data.title }}</h2>
+      {% if post.data.excerpt %}<p class="post-card__excerpt">{{ post.data.excerpt }}</p>{% endif %}
+      {% if post.data.date %}<p class="post-card__meta">{{ post.data.date.toISOString().slice(0,10) }}</p>{% endif %}
+    </div>
+  </a>
+</article>

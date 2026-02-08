@@ -3,9 +3,9 @@ layout: layouts/base.njk
 tags: [posts]
 title: "Intermittent Explosive Disorder \u2014 Melissa Kester, LMFT"
 date: 2014-09-16
+excerpt: "The Mayo-Clinic defines this disorder as \"Intermittent explosive disorder involves repeated episodes of impulsive, aggressive, violent behavior or angry verbal outbursts in which you react grossly out of proportion to the situation.  Signs of Intermittent Explosive Disorder   Road Rage  Domesti"
+noProse: true
 ---
-
-<div class="prose">
 The Mayo-Clinic defines this disorder as "Intermittent explosive disorder involves repeated episodes of impulsive, aggressive, violent behavior or angry verbal outbursts in which you react grossly out of proportion to the situation.
 
  Signs of Intermittent Explosive Disorder
@@ -21,8 +21,8 @@ The Mayo-Clinic defines this disorder as "Intermittent explosive disorder involv
  The link below to the Mayo-Clinic website offers in depth information to help clarify the factors, causes,symptoms, and treatment and referral resources for intermittent explosive disorder.
 
  
-http://www. mayoclinic .org/diseases-conditions/intermittent-explosive-disorder/basics/definition/con-20024309
+[http://www](http://www.mayoclinic.org/diseases-conditions/intermittent-explosive-disorder/basics/definition/con-20024309)[. mayoclinic .org/diseases-conditions/intermittent-explosive-disorder/basics/definition/con-20024309](http://www.mayoclinic.org/diseases-conditions/intermittent-explosive-disorder/basics/definition/con-20024309)
 
 ### Melissa Kester, LMFT | 731 8th Street SE Washington, DC 20003
-info@madisonmft.com | 646-205-7606
-</div>
+[info@madisonmft.com](mailto:%20info@madisonmft.com) | 646-205-7606
+

@@ -71,7 +71,7 @@ noProse: true
   <h2 class="section__title">Next steps</h2>
   <ul>
     <li>Read answers to common questions: <a href="{{ '/faq/' | url }}">FAQ</a></li>
-    <li>Meet the practitioners: <a href="{{ '/team/' | url }}">Our team</a></li>
+    <li>Learn about Melissa: <a href="{{ '/melissa/' | url }}">Melissa</a></li>
     <li>Browse writing and resources: <a href="{{ '/blog/' | url }}">Blog</a></li>
   </ul>
 </section>
