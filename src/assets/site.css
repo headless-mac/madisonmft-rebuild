@@ -15,13 +15,26 @@ body{margin:0;font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Ro
 .skip:focus{left:20px; top:20px; width:auto; height:auto; padding:10px 12px; background:#fff; border:1px solid var(--line); z-index:1000}
 .site-header{position:sticky; top:0; background:#fff; border-bottom:1px solid var(--line)}
 .site-header .wrap{display:flex; align-items:center; justify-content:space-between; padding:14px 20px}
-.brand{font-weight:700; letter-spacing:.2px; color:var(--brand); text-decoration:none}
+.brand{display:flex; align-items:center; gap:10px; font-weight:700; letter-spacing:.2px; color:var(--brand); text-decoration:none}
+.brand-logo{width:34px; height:34px; border-radius:10px; object-fit:cover; border:1px solid var(--line); background:#fff}
+.brand-text{display:inline-block}
 nav a{margin-left:14px; color:var(--text); text-decoration:none}
 nav a:hover{text-decoration:underline}
 nav a.cta{padding:8px 12px; border-radius:10px; background:var(--cta); color:var(--ctaText); text-decoration:none}
 nav a.cta:hover{filter:brightness(0.95)}
 .site-footer{margin-top:60px; border-top:1px solid var(--line); padding:24px 0; color:var(--muted)}
 .fine{font-size:0.9rem}
+.cta{display:inline-block; padding:10px 14px; border-radius:12px; background:var(--cta); color:var(--ctaText); text-decoration:none; font-weight:600}
+.cta:hover{filter:brightness(0.95)}
+.secondary{display:inline-block; padding:10px 14px; border-radius:12px; border:1px solid var(--line); color:var(--text); text-decoration:none; font-weight:600; margin-left:10px}
+.secondary:hover{text-decoration:underline}
+
+.home-hero{display:grid; gap:26px; grid-template-columns:1.1fr .9fr; align-items:center; padding:46px 0 18px}
+.home-hero h1{line-height:1.15; margin:0 0 12px}
+.home-hero__cta{margin-top:18px}
+.home-hero__media{display:flex; justify-content:flex-end}
+.home-hero__media img{width:min(420px, 100%); height:auto; border-radius:18px; border:1px solid var(--line); object-fit:cover}
+
 .hero{padding:46px 0 18px}
 .hero h1{line-height:1.15; margin:0 0 12px}
 .grid{display:grid; gap:16px; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); margin:20px 0}
@@ -30,7 +43,13 @@ nav a.cta:hover{filter:brightness(0.95)}
 .kicker{color:var(--muted); font-size:0.95rem}
 .prose h2{margin-top:28px}
 .prose ul{padding-left:18px}
+.bio-photo{max-width:320px; width:100%; height:auto; border-radius:18px; border:1px solid var(--line); float:right; margin:6px 0 14px 18px}
 @media (max-width: 680px){
+  .home-hero{grid-template-columns:1fr}
+  .home-hero__media{justify-content:flex-start}
+  .secondary{margin-left:0; margin-top:10px}
+  .bio-photo{float:none; margin:10px 0 14px}
+
   nav a{margin-left:10px}
   nav a:nth-child(1), nav a:nth-child(2), nav a:nth-child(3), nav a:nth-child(4){display:none}
 }

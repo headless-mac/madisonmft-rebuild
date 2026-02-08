@@ -22,7 +22,10 @@
 
     <header class="site-header">
       <div class="wrap">
-        <a class="brand" href="/">{{ site.name }}</a>
+        <a class="brand" href="/">
+          {% if site.logo %}<img class="brand-logo" src="{{ site.logo }}" alt="{{ site.name }}" width="48" height="48" loading="eager" decoding="async" />{% endif %}
+          <span class="brand-text">{{ site.name }}</span>
+        </a>
         <nav aria-label="Primary">
           <a href="/about/">About</a>
           <a href="/services/">Services</a>
