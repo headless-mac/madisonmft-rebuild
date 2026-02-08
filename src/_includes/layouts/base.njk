@@ -9,6 +9,10 @@
     <link rel="canonical" href="{{ site.url }}{{ page.url | url }}" />
     <link rel="stylesheet" href="{{ '/assets/site.css' | url }}" />
 
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&display=swap" rel="stylesheet" />
+
     <meta property="og:site_name" content="{{ site.name }}" />
     <meta property="og:title" content="{{ title }}" />
     <meta property="og:description" content="{{ description or site.description }}" />
@@ -31,16 +35,13 @@
     <header class="site-header" data-header>
       <div class="wrap header-inner">
         <a class="brand" href="{{ '/' | url }}">
-          {% if site.logo %}<img class="brand-logo" src="{{ site.logo | url }}" alt="{{ site.name }}" width="64" height="64" loading="eager" decoding="async" />{% endif %}
-          <span class="brand-text">
-            <span class="brand-name">{{ site.name }}</span>
-            <span class="brand-sub">Washington, DC • Telehealth</span>
-          </span>
+          <img class="brand-mark" src="{{ '/assets/images/logo-hero.png' | url }}" alt="" aria-hidden="true" width="220" height="88" loading="eager" decoding="async" />
+          <span class="sr-only">{{ site.name }}</span>
         </a>
 
         <button class="nav-toggle" type="button" aria-controls="site-nav" aria-expanded="false" data-nav-toggle>
-          <span class="nav-toggle__lines" aria-hidden="true"></span>
           <span class="nav-toggle__label">Menu</span>
+          <span class="nav-toggle__lines" aria-hidden="true"></span>
         </button>
 
         <nav class="site-nav" id="site-nav" aria-label="Primary" data-site-nav>
