@@ -6,5 +6,14 @@ permalink: /articles/
 
 <div class="prose">
   <h1>Articles</h1>
-  <p>Blog import pending. This page will list posts with tags + RSS.</p>
+  <p>Thoughts, resources, and reflections.</p>
+
+  <ul>
+  {% for post in collections.posts | reverse %}
+    <li>
+      <a href="{{ post.url }}">{{ post.data.title }}</a>
+      {% if post.data.date %}<span class="kicker"> — {{ post.data.date.toISOString().slice(0,10) }}</span>{% endif %}
+    </li>
+  {% endfor %}
+  </ul>
 </div>
