@@ -55,14 +55,17 @@ html, body{max-width:100%; overflow-x:hidden}
 img{max-width:100%; height:auto}
 
 html[data-theme="light"]{
-  /* Light theme: less saturated, slightly lighter + grayer */
-  --bgBlur: 6px;
-  --bgSaturate: 1.02;
+  /* Light theme: less saturated, lighter + grayer */
+  --bgBlur: 5px;
+  --bgSaturate: 0.98;
   --bgContrast: 1.02;
   --bgHue: 0deg;
-  --bgOpacity: 0.70;
+  --bgOpacity: 0.64;
 
-  --pageBase: #f4f2f0;
+  /* Subtle gray veil to desaturate/neutralize without feeling like a "panel" */
+  --bgOverlay:
+    radial-gradient(900px 600px at 18% 0%, rgba(245,244,242,0.55), transparent 62%),
+    linear-gradient(180deg, rgba(245,244,242,0.42) 0%, rgba(245,244,242,0.42) 100%);
 
   --glassBg: rgba(255,255,255,0.04);
   --glassBgStrong: rgba(255,255,255,0.10);
@@ -99,7 +102,8 @@ body{
   font-family: var(--serif);
   font-weight: 300;
   color: var(--text);
-  background: var(--pageBase);
+  /* Let the botanical layer show through everywhere (no solid page wash). */
+  background: transparent;
   line-height:1.65;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
@@ -472,7 +476,7 @@ hr{
 .divider{
   margin-top: 32px;
   height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(12,18,21,0.16), transparent);
+  background: linear-gradient(90deg, transparent, var(--ruleColor), transparent);
 }
 
 /* Blog */
