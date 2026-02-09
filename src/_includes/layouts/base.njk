@@ -63,9 +63,11 @@
         </div>
 
         <nav class="site-nav" id="site-nav" aria-label="Primary" data-site-nav>
-          <a class="{% if u == '/about/' %}is-active{% endif %}" href="{{ '/about/' | url }}">About</a>
-          <a class="{% if u == '/services/' or (u | startsWith('/services/')) %}is-active{% endif %}" href="{{ '/services/' | url }}">Services</a>
-          <a class="{% if u == '/melissa/' or u == '/team/melissa-kester/' %}is-active{% endif %}" href="{{ '/melissa/' | url }}">Melissa</a>
+          <a class="{% if u == '/' %}is-active{% endif %}" href="{{ '/' | url }}">Home</a>
+          <a class="{% if u == '/about/' %}is-active{% endif %}" href="{{ '/about/' | url }}">About Therapy</a>
+          <a class="{% if u == '/services/' or (u | startsWith('/services/')) %}is-active{% endif %}" href="{{ '/services/' | url }}">Focus Areas</a>
+          <a class="{% if u == '/melissa/' or u == '/team/melissa-kester/' %}is-active{% endif %}" href="{{ '/melissa/' | url }}">Your Therapist</a>
+          <a class="{% if u == '/faq/' %}is-active{% endif %}" href="{{ '/faq/' | url }}">FAQ</a>
           <a class="{% if u == '/blog/' or u == '/articles/' or (u | startsWith('/posts/')) %}is-active{% endif %}" href="{{ '/blog/' | url }}">Blog</a>
           <a class="nav-contact {% if u == '/contact/' %}is-active{% endif %}" href="{{ '/contact/' | url }}" data-pulse>Contact</a>
         </nav>
