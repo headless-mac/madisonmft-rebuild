@@ -18,7 +18,7 @@ const $ = (sel, root = document) => root.querySelector(sel);
   const btn = document.querySelector('[data-theme-toggle]');
   if (!btn) return;
 
-  const themes = ['light', 'neutral', 'dark'];
+  const themes = ['light', 'dark'];
   const storageKey = 'madisonmft_theme';
 
   const apply = (theme) => {
@@ -42,10 +42,11 @@ const $ = (sel, root = document) => root.querySelector(sel);
   };
 
   const init = () => {
-    let theme = 'neutral';
+    let theme = 'light';
     try {
       const stored = window.localStorage.getItem(storageKey);
-      if (stored && themes.includes(stored)) theme = stored;
+      if (stored === 'neutral') theme = 'light';
+      else if (stored && themes.includes(stored)) theme = stored;
     } catch {
       // ignore
     }

@@ -51,21 +51,11 @@
 
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
+html, body{max-width:100%; overflow-x:hidden}
+img{max-width:100%; height:auto}
 
 html[data-theme="light"]{
-  --bgBlur: 9px;
-  --bgSaturate: 1.05;
-  --bgContrast: 1.02;
-  --bgHue: -4deg;
-  --bgOpacity: 0.72;
-  --pageBase: #f2eee9;
-  --glassBg: rgba(255,255,255,0.05);
-  --glassBgStrong: rgba(255,255,255,0.12);
-  --glassBgHover: rgba(255,255,255,0.16);
-}
-
-html[data-theme="neutral"]{
-  /* (matches :root defaults) */
+  /* Light theme = the former "neutral" look */
 }
 
 html[data-theme="dark"]{
@@ -108,7 +98,8 @@ body{
 body::before{
   content:"";
   position: fixed;
-  inset: 0;
+  /* Slight overscan so blur never reveals edges; avoids horizontal scroll issues */
+  inset: -8%;
   background-image: url('images/bg/botanical-bg-2000.jpg');
   background-size: cover;
   background-position: 50% 35%;
@@ -117,7 +108,7 @@ body::before{
     saturate(var(--bgSaturate))
     contrast(var(--bgContrast))
     hue-rotate(var(--bgHue));
-  transform: scale(var(--bgScale));
+  transform: none;
   opacity: var(--bgOpacity);
   pointer-events: none;
   z-index: -2;
@@ -520,6 +511,29 @@ hr.rule{margin:0; background: var(--ruleColor)}
 
 .bio-photo{max-width: 320px; width:100%; height:auto; border-radius: 22px; border: 1px solid rgba(12,18,21,0.12); box-shadow: 0 16px 40px rgba(12,18,21,0.10); float:right; margin: 6px 0 14px 18px}
 
+/* Desktop layout fix for Melissa page on wide windows */
+.melissa-page .prose{
+  display:grid;
+  grid-template-columns: minmax(0, 1fr) 360px;
+  column-gap: 44px;
+  align-items:start;
+}
+.melissa-page .prose > *{grid-column:1}
+.melissa-page .prose > img.bio-photo{
+  grid-column:2;
+  grid-row: 1 / span 40;
+  float: none;
+  margin: 6px 0 0;
+  max-width: 100%;
+}
+.melissa-page .prose > hr{grid-column: 1 / -1}
+.melissa-page .prose > hr ~ *{grid-column: 1 / -1}
+
+@media (max-width: 900px){
+  .melissa-page .prose{display:block}
+  .melissa-page .prose > img.bio-photo{margin: 10px auto 18px}
+}
+
 /* Services page spacing */
 .services{margin-top: 10px}
 
@@ -546,6 +560,10 @@ hr.rule{margin:0; background: var(--ruleColor)}
 }
 
 @media (max-width: 720px){
+  .header-inner{gap: 12px}
+  .brand-plant{width: 150px; max-height: 76px}
+  .brand-title{font-size: 0.85rem; letter-spacing: 0.12em; text-align:center}
+
   .nav-toggle{display:inline-flex}
   .site-nav{display:none}
   .theme-btn{display:inline-flex}

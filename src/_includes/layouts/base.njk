@@ -27,7 +27,7 @@
       document.documentElement.classList.add('js');
     </script>
   </head>
-  <body>
+  <body class="{{ pageClass or '' }}">
     <a class="skip" href="#content">Skip to content</a>
 
     {% set u = page.url %}
@@ -58,7 +58,7 @@
           <span class="nav-toggle__lines" aria-hidden="true"></span>
         </button>
 
-        <button class="theme-btn" type="button" data-theme-toggle aria-label="Theme">NEUTRAL</button>
+        <button class="theme-btn" type="button" data-theme-toggle aria-label="Theme">LIGHT</button>
 
         <nav class="site-nav" id="site-nav" aria-label="Primary" data-site-nav>
           <a class="{% if u == '/about/' %}is-active{% endif %}" href="{{ '/about/' | url }}">About</a>
