@@ -576,10 +576,14 @@ hr.rule{margin:0; background: var(--ruleColor)}
   html.nav-open .site-nav{
     display:flex;
     position: static;
-    margin-top: 10px;
+    margin-top: 12px;
     padding: 10px;
     flex-direction: column;
     gap: 8px;
+
+    width: min(360px, calc(100vw - 28px));
+    margin-left: auto;
+    margin-right: auto;
 
     border-radius: 18px;
     border: none;
@@ -588,7 +592,13 @@ hr.rule{margin:0; background: var(--ruleColor)}
     -webkit-backdrop-filter: blur(var(--glassBlur));
   }
 
-  html.nav-open .site-nav a{justify-content:flex-start; padding: 12px 14px}
+  html.nav-open .site-nav a{
+    justify-content:center;
+    text-align:center;
+    width:100%;
+    white-space: nowrap;
+    padding: 12px 14px;
+  }
 
   html.nav-open .nav-toggle__lines::before{top:5px; transform: rotate(45deg)}
   html.nav-open .nav-toggle__lines::after{top:5px; transform: rotate(-45deg)}
