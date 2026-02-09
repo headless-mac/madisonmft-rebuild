@@ -36,8 +36,20 @@
       <div class="wrap header-inner">
         <a class="brand" href="{{ '/' | url }}">
           <span class="brand-stack">
-            <img class="brand-plant" src="{{ '/assets/images/plant-mark.png' | url }}" alt="" aria-hidden="true" width="88" height="44" loading="eager" decoding="async" />
-            <span class="brand-title">Melissa Kester, LMFT</span>
+            <img
+              class="brand-plant"
+              src="{{ '/assets/images/plant-mark.png' | url }}"
+              data-theme-src-light="{{ '/assets/images/plant-mark.png' | url }}"
+              data-theme-src-neutral="{{ '/assets/images/plant-mark.png' | url }}"
+              data-theme-src-dark="{{ '/assets/images/plant-mark-dark.png' | url }}"
+              alt=""
+              aria-hidden="true"
+              width="190"
+              height="92"
+              loading="eager"
+              decoding="async"
+            />
+            <span class="brand-title">MELISSA KESTER, LMFT</span>
           </span>
         </a>
 
@@ -52,6 +64,7 @@
           <a class="{% if u == '/melissa/' or u == '/team/melissa-kester/' %}is-active{% endif %}" href="{{ '/melissa/' | url }}">Melissa</a>
           <a class="{% if u == '/blog/' or u == '/articles/' or (u | startsWith('/posts/')) %}is-active{% endif %}" href="{{ '/blog/' | url }}">Blog</a>
           <a class="nav-contact {% if u == '/contact/' %}is-active{% endif %}" href="{{ '/contact/' | url }}" data-pulse>Contact</a>
+          <button class="theme-btn" type="button" data-theme-toggle aria-label="Theme">Neutral</button>
         </nav>
       </div>
     </header>

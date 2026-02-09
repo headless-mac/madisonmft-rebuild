@@ -6,6 +6,7 @@
 */
 
 :root{
+  /* Theme tokens (neutral defaults) */
   --bg: #f6f2ec;
   --panel: rgba(255,255,255,0.78);
   --panelSolid: #ffffff;
@@ -25,6 +26,19 @@
   --copper: #b08a58;
   --accent: var(--evergreen);
 
+  /* Background rendering */
+  --bgBlur: 7px;
+  --bgSaturate: 1.18;
+  --bgContrast: 1.04;
+  --bgHue: -10deg;
+  --bgOpacity: 0.80;
+  --bgScale: 1.05;
+  --bgOverlay: transparent;
+
+  --pageBase: #e9e3db;
+  --ruleColor: rgba(12,18,21,0.10);
+  --glassBgHover: rgba(255,255,255,0.10);
+
   --radius: 18px;
   --radiusSm: 12px;
   --max: 1120px;
@@ -37,12 +51,54 @@
 
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
+
+html[data-theme="light"]{
+  --bgBlur: 9px;
+  --bgSaturate: 1.05;
+  --bgContrast: 1.02;
+  --bgHue: -4deg;
+  --bgOpacity: 0.72;
+  --pageBase: #f2eee9;
+  --glassBg: rgba(255,255,255,0.05);
+  --glassBgStrong: rgba(255,255,255,0.12);
+  --glassBgHover: rgba(255,255,255,0.16);
+}
+
+html[data-theme="neutral"]{
+  /* (matches :root defaults) */
+}
+
+html[data-theme="dark"]{
+  color-scheme: dark;
+
+  --text: rgba(255,255,255,0.92);
+  --ink: rgba(255,255,255,0.92);
+  --muted: rgba(255,255,255,0.66);
+  --hairline: rgba(255,255,255,0.16);
+
+  --pageBase: #050607;
+  --ruleColor: rgba(255,255,255,0.14);
+
+  --glassBg: rgba(0,0,0,0.22);
+  --glassBgStrong: rgba(0,0,0,0.30);
+  --glassBgHover: rgba(0,0,0,0.40);
+
+  --bgBlur: 9px;
+  --bgSaturate: 1.18;
+  --bgContrast: 1.05;
+  --bgHue: -8deg;
+  --bgOpacity: 0.78;
+  --bgOverlay:
+    radial-gradient(900px 600px at 20% 0%, rgba(0,0,0,0.55), transparent 60%),
+    linear-gradient(180deg, rgba(0,0,0,0.62) 0%, rgba(0,0,0,0.62) 100%);
+}
+
 body{
   margin:0;
   font-family: var(--serif);
   font-weight: 300;
   color: var(--text);
-  background: #e9e3db;
+  background: var(--pageBase);
   line-height:1.65;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
@@ -56,20 +112,22 @@ body::before{
   background-image: url('images/bg/botanical-bg-2000.jpg');
   background-size: cover;
   background-position: 50% 35%;
-  /* more present + more blurred */
-  filter: blur(10px) saturate(1.35) contrast(1.05);
-  transform: scale(1.06);
-  opacity: 0.82;
+  filter:
+    blur(var(--bgBlur))
+    saturate(var(--bgSaturate))
+    contrast(var(--bgContrast))
+    hue-rotate(var(--bgHue));
+  transform: scale(var(--bgScale));
+  opacity: var(--bgOpacity);
   pointer-events: none;
   z-index: -2;
 }
 body::after{
-  /* Removed: this was the beige "panel" wash between the background + content. */
+  /* Theme-controlled overlay (dark mode tint lives here). */
   content:"";
   position: fixed;
   inset: 0;
-  background: none;
-  opacity: 0;
+  background: var(--bgOverlay);
   pointer-events: none;
   z-index: -1;
 }
@@ -119,10 +177,11 @@ a:focus-visible, button:focus-visible{
 }
 .header-inner{display:flex; align-items:center; justify-content:space-between; gap:18px}
 .brand{display:flex; align-items:center; gap:12px; text-decoration:none}
-.brand-stack{display:flex; flex-direction:column; gap:4px; align-items:center}
+.brand-stack{display:flex; flex-direction:column; gap:6px; align-items:center}
 .brand-plant{
-  width: 160px;
-  height: 68px;
+  width: 190px;
+  height: auto;
+  max-height: 92px;
   object-fit: contain;
   border-radius: 14px;
   background: rgba(255,255,255,0.02);
@@ -141,6 +200,25 @@ a:focus-visible, button:focus-visible{
 }
 
 .site-nav{display:flex; align-items:center; gap:12px}
+
+.theme-btn{
+  border:none;
+  background: var(--glassBg);
+  backdrop-filter: blur(var(--glassBlur));
+  -webkit-backdrop-filter: blur(var(--glassBlur));
+  color: var(--ink);
+  font-family: inherit;
+  font-weight: 400;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  font-size: .78rem;
+  padding: 10px 12px;
+  border-radius: 999px;
+  cursor:pointer;
+  opacity: .86;
+  transition: opacity 180ms var(--ease), transform 180ms var(--ease), background 220ms var(--ease);
+}
+.theme-btn:hover{opacity:1; transform: translateY(-0.5px); background: var(--glassBgHover)}
 .site-nav a{
   position:relative;
   color: var(--ink);
@@ -150,12 +228,12 @@ a:focus-visible, button:focus-visible{
   opacity: .86;
   padding: 10px 14px;
   border-radius: 999px;
-  background: rgba(255,255,255,0.02);
+  background: var(--glassBg);
   backdrop-filter: blur(var(--glassBlur));
   -webkit-backdrop-filter: blur(var(--glassBlur));
   transition: opacity 180ms var(--ease), transform 180ms var(--ease), background 220ms var(--ease);
 }
-.site-nav a:hover{opacity: 1; transform: translateY(-0.5px); background: rgba(255,255,255,0.05)}
+.site-nav a:hover{opacity: 1; transform: translateY(-0.5px); background: var(--glassBgHover)}
 .site-nav a.nav-contact{font-weight:800}
 
 @keyframes haloPulse{
@@ -218,7 +296,7 @@ a:focus-visible, button:focus-visible{
   align-items:center;
   gap:10px;
   border: none;
-  background: rgba(255,255,255,0.02);
+  background: var(--glassBg);
   backdrop-filter: blur(var(--glassBlur));
   -webkit-backdrop-filter: blur(var(--glassBlur));
   padding: 10px 14px;
@@ -231,7 +309,7 @@ a:focus-visible, button:focus-visible{
   appearance: none;
   transition: transform 180ms var(--ease), background 180ms var(--ease), opacity 180ms var(--ease);
 }
-.nav-toggle:hover{transform: translateY(-1px); background: rgba(255,255,255,0.06)}
+.nav-toggle:hover{transform: translateY(-1px); background: var(--glassBgHover)}
 .nav-toggle__label{font-weight:400}
 .nav-toggle__lines{width:18px; height:12px; position:relative}
 .nav-toggle__lines::before,
@@ -241,7 +319,8 @@ a:focus-visible, button:focus-visible{
   left:0;
   right:0;
   height:2px;
-  background: rgba(12,18,21,0.55);
+  background: currentColor;
+  opacity: 0.55;
   border-radius: 999px;
   transition: transform 220ms var(--ease), top 220ms var(--ease), opacity 220ms var(--ease);
 }
@@ -270,7 +349,7 @@ a:focus-visible, button:focus-visible{
 hr{
   border: 0;
   height: 1px;
-  background: rgba(12,18,21,0.10);
+  background: var(--ruleColor);
   margin: 26px 0;
 }
 
@@ -470,6 +549,7 @@ hr.rule{margin:0; background: rgba(12,18,21,0.10)}
 @media (max-width: 720px){
   .nav-toggle{display:inline-flex}
   .site-nav{display:none}
+  .theme-btn{display:none}
 
   /* If blur can't render well on a device, make the menu push content down instead of overlaying it. */
   html.nav-open .site-header{padding-bottom: 12px}

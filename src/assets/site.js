@@ -13,6 +13,55 @@ const $ = (sel, root = document) => root.querySelector(sel);
   window.addEventListener('scroll', onScroll, { passive: true });
 })();
 
+// Theme selector (light | neutral | dark)
+(function themeSelector() {
+  const btn = document.querySelector('[data-theme-toggle]');
+  if (!btn) return;
+
+  const themes = ['light', 'neutral', 'dark'];
+  const storageKey = 'madisonmft_theme';
+
+  const apply = (theme) => {
+    document.documentElement.dataset.theme = theme;
+    try {
+      window.localStorage.setItem(storageKey, theme);
+    } catch {
+      // ignore
+    }
+
+    // Update label
+    btn.textContent = theme;
+
+    // Swap any theme-aware images
+    const imgs = Array.from(document.querySelectorAll('img[data-theme-src-light]'));
+    for (const img of imgs) {
+      const attr = `data-theme-src-${theme}`;
+      const next = img.getAttribute(attr);
+      if (next && img.getAttribute('src') !== next) img.setAttribute('src', next);
+    }
+  };
+
+  const init = () => {
+    let theme = 'neutral';
+    try {
+      const stored = window.localStorage.getItem(storageKey);
+      if (stored && themes.includes(stored)) theme = stored;
+    } catch {
+      // ignore
+    }
+    apply(theme);
+  };
+
+  btn.addEventListener('click', () => {
+    const cur = document.documentElement.dataset.theme || 'neutral';
+    const idx = themes.indexOf(cur);
+    const next = themes[(idx + 1) % themes.length];
+    apply(next);
+  });
+
+  init();
+})();
+
 // Mobile nav
 (function mobileNav() {
   const toggle = $('[data-nav-toggle]');
