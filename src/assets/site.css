@@ -55,7 +55,18 @@ html, body{max-width:100%; overflow-x:hidden}
 img{max-width:100%; height:auto}
 
 html[data-theme="light"]{
-  /* Light theme = the former "neutral" look */
+  /* Light theme: less saturated, slightly lighter + grayer */
+  --bgBlur: 6px;
+  --bgSaturate: 1.02;
+  --bgContrast: 1.02;
+  --bgHue: 0deg;
+  --bgOpacity: 0.70;
+
+  --pageBase: #f4f2f0;
+
+  --glassBg: rgba(255,255,255,0.04);
+  --glassBgStrong: rgba(255,255,255,0.10);
+  --glassBgHover: rgba(255,255,255,0.14);
 }
 
 html[data-theme="dark"]{
