@@ -50,7 +50,7 @@
 }
 
 *{box-sizing:border-box}
-html{scroll-behavior:smooth}
+html{scroll-behavior:smooth; font-size: 16px}
 html, body{max-width:100%; overflow-x:hidden}
 img{max-width:100%; height:auto}
 
@@ -100,13 +100,19 @@ html[data-theme="dark"]{
 body{
   margin:0;
   font-family: var(--serif);
-  font-weight: 300;
+  /* Garamond has a smaller x-height; use a more standard weight/size for readability. */
+  font-weight: 400;
+  font-size: 17px;
   color: var(--text);
   /* Let the botanical layer show through everywhere (no solid page wash). */
   background: transparent;
-  line-height:1.65;
+  line-height: 1.65;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
+}
+
+@media (min-width: 980px){
+  body{font-size: 18px}
 }
 
 /* Full-bleed botanical background, like the source site (but optimized). */
@@ -522,8 +528,8 @@ hr{
 hr.rule{margin:0; background: var(--ruleColor)}
 
 .bio-photo{
-  /* 25% smaller + more breathing room */
-  max-width: 120px;
+  /* Larger, more readable headshot on About page */
+  max-width: 240px;
   width:100%;
   height:auto;
   border-radius: 18px;
@@ -558,9 +564,19 @@ hr.rule{margin:0; background: var(--ruleColor)}
 
   .card{grid-column: span 12}
   .footer-inner{align-items:flex-start; flex-direction:column}
+
+  /* On phones, don't float the headshot into a narrow column */
+  .bio-photo{
+    float:none;
+    display:block;
+    margin: 16px auto 24px;
+    max-width: 210px;
+  }
 }
 
 @media (max-width: 720px){
+  body{font-size: 16px}
+
   .header-inner{gap: 12px; align-items:flex-start}
   .header-actions{flex-direction:column; align-items:flex-end; gap:10px}
 
