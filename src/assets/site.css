@@ -183,11 +183,9 @@ a:focus-visible, button:focus-visible{
   height: auto;
   max-height: 92px;
   object-fit: contain;
-  border-radius: 14px;
-  background: rgba(255,255,255,0.02);
-  backdrop-filter: blur(var(--glassBlur));
-  -webkit-backdrop-filter: blur(var(--glassBlur));
-  padding: 6px 10px;
+  background: transparent;
+  border-radius: 0;
+  padding: 0;
 }
 .brand-title{
   font-family: var(--serif);
@@ -405,13 +403,14 @@ hr{
 }
 .home-logo{
   display:block;
-  width: min(360px, 72vw);
+  width: min(420px, 78vw);
   height: auto;
   margin: 0 auto;
-  background: rgba(255,255,255,0.95);
-  padding: 18px 18px;
-  border-radius: 22px;
-  box-shadow: 0 26px 90px rgba(12,18,21,0.18);
+  background: transparent;
+  padding: 0;
+  border-radius: 0;
+  /* depth without adding a visible box */
+  filter: drop-shadow(0 26px 90px rgba(12,18,21,0.18));
 }
 .home-card__body{
   padding: clamp(18px, 3.2vw, 34px);
