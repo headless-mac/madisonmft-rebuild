@@ -53,12 +53,14 @@
           </span>
         </a>
 
-        <button class="nav-toggle" type="button" aria-controls="site-nav" aria-expanded="false" data-nav-toggle>
-          <span class="nav-toggle__label">Menu</span>
-          <span class="nav-toggle__lines" aria-hidden="true"></span>
-        </button>
+        <div class="header-actions">
+          <button class="theme-btn" type="button" data-theme-toggle aria-label="Theme">LIGHT</button>
 
-        <button class="theme-btn" type="button" data-theme-toggle aria-label="Theme">LIGHT</button>
+          <button class="nav-toggle" type="button" aria-controls="site-nav" aria-expanded="false" data-nav-toggle>
+            <span class="nav-toggle__label">Menu</span>
+            <span class="nav-toggle__lines" aria-hidden="true"></span>
+          </button>
+        </div>
 
         <nav class="site-nav" id="site-nav" aria-label="Primary" data-site-nav>
           <a class="{% if u == '/about/' %}is-active{% endif %}" href="{{ '/about/' | url }}">About</a>

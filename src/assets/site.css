@@ -167,6 +167,7 @@ a:focus-visible, button:focus-visible{
   box-shadow: 0 16px 60px rgba(12,18,21,0.10);
 }
 .header-inner{display:flex; align-items:center; justify-content:space-between; gap:18px}
+.header-actions{display:flex; align-items:center; gap:12px}
 .brand{display:flex; align-items:center; gap:12px; text-decoration:none}
 .brand-stack{display:flex; flex-direction:column; gap:6px; align-items:center}
 .brand-plant{
@@ -513,9 +514,13 @@ hr.rule{margin:0; background: var(--ruleColor)}
 
 /* Desktop layout fix for Melissa page on wide windows */
 .melissa-page .prose{
+  /* Override global .prose max-width so wide screens don't collapse into a tiny column */
+  max-width: none;
+  width: 100%;
+
   display:grid;
-  grid-template-columns: minmax(0, 1fr) 360px;
-  column-gap: 44px;
+  grid-template-columns: minmax(0, 1fr) 420px;
+  column-gap: clamp(22px, 4vw, 56px);
   align-items:start;
 }
 .melissa-page .prose > *{grid-column:1}
@@ -560,7 +565,9 @@ hr.rule{margin:0; background: var(--ruleColor)}
 }
 
 @media (max-width: 720px){
-  .header-inner{gap: 12px}
+  .header-inner{gap: 12px; align-items:flex-start}
+  .header-actions{flex-direction:column; align-items:flex-end; gap:10px}
+
   .brand-plant{width: 150px; max-height: 76px}
   .brand-title{font-size: 0.85rem; letter-spacing: 0.12em; text-align:center}
 
