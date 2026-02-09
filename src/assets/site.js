@@ -30,7 +30,7 @@ const $ = (sel, root = document) => root.querySelector(sel);
     }
 
     // Update label
-    btn.textContent = theme;
+    btn.textContent = theme.toUpperCase();
 
     // Swap any theme-aware images
     const imgs = Array.from(document.querySelectorAll('img[data-theme-src-light]'));
