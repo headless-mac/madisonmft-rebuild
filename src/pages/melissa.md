@@ -2,9 +2,15 @@
 layout: layouts/base.njk
 title: Melissa Kester, LMFT
 permalink: /melissa/
-description: Licensed Marriage & Family Therapist • Washington, DC • Telehealth
+description: Therapy with Melissa Kester, LMFT (Washington, DC + Telehealth).
+showTitle: false
 pageClass: melissa-page
 ---
+
+<header class="page-head reveal">
+  <h1 class="page-title">Melissa Kester, LMFT</h1>
+  <p class="page-sub melissa-sub">Licensed Marriage &amp; Family Therapist • Washington, DC<br />Telehealth</p>
+</header>
 
 <img class="bio-photo" src="{{ '/assets/images/melissa-kester.jpg' | url }}" alt="Melissa Kester" loading="lazy" decoding="async" />
 

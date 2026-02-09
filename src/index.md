@@ -23,9 +23,6 @@ noProse: true
     </div>
 
     <div class="home-card__body">
-      <h1 class="home-title">Melissa Kester, LMFT</h1>
-      <p class="home-sub">Washington, DC • Telehealth</p>
-
       <div class="home-copy">
         <p>
           Melissa Kester, LMFT provides therapy for individuals, couples, and adult family members. By looking into past and present relationships,

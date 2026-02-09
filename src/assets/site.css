@@ -41,7 +41,7 @@
 
   --radius: 18px;
   --radiusSm: 12px;
-  --max: 1120px;
+  --max: 1260px;
 
   --sans: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
   --serif: "Cormorant Garamond", ui-serif, "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
@@ -361,7 +361,7 @@ hr{
 /* Typography */
 .kicker{color: var(--muted); letter-spacing: .12em; text-transform: uppercase; font-size: .82rem}
 
-.prose{max-width: 72ch}
+.prose{max-width: 84ch; margin-left:auto; margin-right:auto}
 .prose h1{
   font-family: var(--serif);
   letter-spacing: -0.015em;
@@ -525,34 +525,19 @@ hr.rule{margin:0; background: var(--ruleColor)}
   .service-row{grid-template-columns: 1fr; gap: 8px; padding: 14px 0}
 }
 
-.bio-photo{max-width: 320px; width:100%; height:auto; border-radius: 22px; border: 1px solid rgba(12,18,21,0.12); box-shadow: 0 16px 40px rgba(12,18,21,0.10); float:right; margin: 6px 0 14px 18px}
-
-/* Desktop layout fix for Melissa page on wide windows */
-.melissa-page .prose{
-  /* Override global .prose max-width so wide screens don't collapse into a tiny column */
-  max-width: none;
-  width: 100%;
-
-  display:grid;
-  grid-template-columns: minmax(0, 1fr) 420px;
-  column-gap: clamp(22px, 4vw, 56px);
-  align-items:start;
+.bio-photo{
+  /* 25% smaller + more breathing room */
+  max-width: 240px;
+  width:100%;
+  height:auto;
+  border-radius: 22px;
+  border: 1px solid rgba(12,18,21,0.12);
+  box-shadow: 0 16px 40px rgba(12,18,21,0.10);
+  float:right;
+  margin: 12px 0 22px 34px;
 }
-.melissa-page .prose > *{grid-column:1}
-.melissa-page .prose > img.bio-photo{
-  grid-column:2;
-  grid-row: 1 / span 40;
-  float: none;
-  margin: 6px 0 0;
-  max-width: 100%;
-}
-.melissa-page .prose > hr{grid-column: 1 / -1}
-.melissa-page .prose > hr ~ *{grid-column: 1 / -1}
 
-@media (max-width: 900px){
-  .melissa-page .prose{display:block}
-  .melissa-page .prose > img.bio-photo{margin: 10px auto 18px}
-}
+.melissa-sub{white-space: normal}
 
 /* Services page spacing */
 .services{margin-top: 10px}
